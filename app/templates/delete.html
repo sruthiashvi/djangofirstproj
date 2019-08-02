@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class='mx-auto mt-3' style="width:500px">
+        <div class="p-3 border">
+            <legend class='form-group'></legend>
+            <hr>
+            <form method="post">
+                {% csrf_token %}
+                <h3>sure?{{object.name}}?click yes</h3>
+                <!--{{form.as_table}}--> <!--{{form.as_ul}}-->  <!--{{form.as_p}}--> 
+                <button class="btn btn-danger" type="submit">yes delete</button>
+                <a class='btn btn-outline-secondary' href="{% url 'tododetail' object.id%}">cancel</a>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

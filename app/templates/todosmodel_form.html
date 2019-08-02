@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class='mx-auto mt-3' style="width:500px">
+        <div class="p-3 border">
+            <legend class='form-group'>Add new todo</legend>
+            <hr>
+            <form method="post">
+                {% csrf_token %}
+                {{form|crispy}}
+                <!--{{form.as_table}}--> <!--{{form.as_ul}}-->  <!--{{form.as_p}}--> 
+                <button class="btn btn-success" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
